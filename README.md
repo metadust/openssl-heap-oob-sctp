@@ -4,6 +4,7 @@ OpenSSL SCTP BIO Notification Heap OOB Read in `dgram_sctp_read`.
 
 > **Status:** Reported previously. While this is a confirmed vulnerability, it is highly unlikely to be exploited, and the overall impact is low. 
 > *Note: This is fixed in the `main` branch on GitHub, but the releases do not yet include this patch.*
+<img src="./commit.png">
 
 ## Vulnerability Details
 
@@ -55,3 +56,5 @@ If an application calls `BIO_read` with a small buffer (e.g., 1 byte), `recvmsg`
    
    LD_PRELOAD=$(gcc -print-file-name=libasan.so):./fake_sctp.so ./repro_sctp
    ```
+
+   <img src="./asan.png">
